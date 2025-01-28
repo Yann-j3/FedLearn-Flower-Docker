@@ -8,7 +8,7 @@ version = "1.0.0"
 description = ""
 license = "Apache-2.0"
 dependencies = [
-    "flwr[simulation]>=1.13.1",
+    "flwr==1.14.0",
     "flwr-datasets[vision]>=0.3.0",
     "torch==2.2.1",
     "torchvision==0.17.1",
@@ -25,12 +25,13 @@ serverapp = "quickstart_docker.server_app:app"
 clientapp = "quickstart_docker.client_app:app"
 
 [tool.flwr.app.config]
-num-server-rounds = 3
+num-server-rounds = 10
 fraction-fit = 0.5
 local-epochs = 1
 
 [tool.flwr.federations]
 default = "local-simulation"
 
-[tool.flwr.federations.local-simulation]
-options.num-supernodes = 10
+[tool.flwr.federations.local-deployment]
+address = "127.0.0.1:9093"
+insecure = true
