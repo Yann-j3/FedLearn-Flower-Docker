@@ -1,13 +1,12 @@
-
 # Installer les packets nécéssaires
 sudo snap install code --classic
-sudo apt install git 
+sudo apt install git
 
 # Installer Flower dans un environnement virtuel
 sudo apt install python3.12-venv
 python3 -m venv flwrvenv
 source flwrvenv/bin/activate
-pip install flwr ray torch
+pip install flwr flwr-datasets ray torch torchvision
 
 # Préparer Docker
 sudo apt-get install ca-certificates curl
@@ -55,6 +54,6 @@ docker run --rm --network flwr-network --name clientapp-2 --detach flwr_clientap
 # Vérifier
 docker network inspect flwr-network
 
-
-BUILD FAB
+# Lancer la simulation
 flwr build
+flwr run

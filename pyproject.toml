@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "quickstart-docker"
+name = "federatedlearning"
 version = "1.0.0"
 description = ""
 license = "Apache-2.0"
@@ -21,13 +21,13 @@ packages = ["."]
 publisher = "flower"
 
 [tool.flwr.app.components]
-serverapp = "quickstart_docker.server_app:app"
-clientapp = "quickstart_docker.client_app:app"
+serverapp = "fedlearn_app.server_app:app"
+clientapp = "fedlearn_app.client_app:app"
 
 [tool.flwr.app.config]
-num-server-rounds = 3
+num-server-rounds = 10
 fraction-fit = 0.5
-local-epochs = 1
+local-epochs = 3
 
 [tool.flwr.federations]
 default = "local-simulation"
