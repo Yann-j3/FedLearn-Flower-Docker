@@ -1,12 +1,12 @@
-# Installer les packets nécéssaires
-sudo snap install code --classic
-sudo apt install git
+# Installer les paquets nécéssaires
+- sudo snap install code --classic
+- sudo apt install git
 
 # Installer Flower dans un environnement virtuel
-sudo apt install python3.12-venv
-python3 -m venv flwrvenv
-source flwrvenv/bin/activate
-pip install flwr flwr-datasets ray torch torchvision
+- sudo apt install python3.12-venv
+- python3 -m venv flwrvenv
+- source flwrvenv/bin/activate
+- pip install flwr flwr-datasets ray torch torchvision
 
 # Préparer Docker
 sudo apt-get install ca-certificates curl
